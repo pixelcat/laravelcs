@@ -1,4 +1,8 @@
 <?php
+
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Files\File;
+
 /**
  * This sniff prohibits the use of WhiteSpaces for indentation.
  *
@@ -9,7 +13,7 @@
  * @version   Release: @package_version@
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
-class Laravel_Sniffs_Tabs_DisallowWhitespaceIndentSniff implements PHP_CodeSniffer_Sniff
+class Laravel_Sniffs_Tabs_DisallowWhitespaceIndentSniff implements Sniff
 {
 
 	/**
@@ -43,7 +47,7 @@ class Laravel_Sniffs_Tabs_DisallowWhitespaceIndentSniff implements PHP_CodeSniff
 	 *
 	 * @return void
 	 */
-	public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+	public function process(File $phpcsFile, $stackPtr)
 	{
 		$tokens = $phpcsFile->getTokens();
 		$error  = 'Tabs must be used to indent lines; spaces are not allowed';

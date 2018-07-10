@@ -1,4 +1,8 @@
 <?php
+
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Files\File;
+
 /**
  * Verifies that control statements conform to their coding standards.
  *
@@ -9,7 +13,7 @@
  * @version   Release: @package_version@
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
-class Laravel_Sniffs_ControlStructures_ControlSignatureSniff implements PHP_CodeSniffer_Sniff
+class Laravel_Sniffs_ControlStructures_ControlSignatureSniff implements Sniff
 {
 	/**
 	 * A list of tokenizers this sniff supports.
@@ -42,13 +46,13 @@ class Laravel_Sniffs_ControlStructures_ControlSignatureSniff implements PHP_Code
 	/**
 	 * Processes this test, when one of its tokens is encountered.
 	 *
-	 * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+	 * @param File $phpcsFile The file being scanned.
 	 * @param int                  $stackPtr  The position of the current token in the
 	 *                                        stack passed in $tokens.
 	 *
 	 * @return void
 	 */
-	public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+	public function process(File $phpcsFile, $stackPtr)
 	{
 		$tokens = $phpcsFile->getTokens();
 		// Single space after the keyword.

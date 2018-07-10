@@ -1,4 +1,7 @@
 <?php
+
+use PHP_CodeSniffer\Exceptions\RuntimeException;
+
 /**
  * Function Declaration.
  *
@@ -9,11 +12,11 @@
  * @version   Release: @package_version@
  * @link      http://pear.php.net/package/PHP_CodeSniffer
  */
-if (class_exists('PHP_CodeSniffer_Standards_AbstractPatternSniff', true) === false) {
-    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_Standards_AbstractPatternSniff not found');
+if (class_exists('PHP_CodeSniffer\Sniffs\AbstractPatternSniff', true) === false) {
+    throw new RuntimeException('Class PHP_CodeSniffer\Sniffs\AbstractPatternSniff not found');
 }
 
-class Laravel_Sniffs_Functions_FunctionDeclarationSniff extends PHP_CodeSniffer_Standards_AbstractPatternSniff
+class Laravel_Sniffs_Functions_FunctionDeclarationSniff extends PHP_CodeSniffer\Sniffs\AbstractPatternSniff
 {
     /**
      * Returns an array of patterns to check are correct.
